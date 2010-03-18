@@ -1,27 +1,9 @@
 from distutils.core import setup
 import sys
 
-try:
-    import urllib
-except:
+if sys.version < '2.6':
     print ''
-    print '** urllib is required by embedly'
-    print ''
-    sys.exit()
-
-try:
-    import urllib
-except:
-    print ''
-    print '** urllib2 is required by embedly'
-    print ''
-    sys.exit()
-
-try:
-    import json
-except:
-    print ''
-    print '** json is required by embedly'
+    print '** json is required by embedly and comes standard with python version > 2.6'
     print ''
     sys.exit()
 
