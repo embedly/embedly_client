@@ -2,10 +2,13 @@ from distutils.core import setup
 import sys
 
 if sys.version < '2.6':
-    print ''
-    print '** json is required by embedly and comes standard with python version > 2.6'
-    print ''
-    sys.exit()
+    try:
+        import simplejson
+    except:
+        print ''
+        print '** simplejson is required by embedly to perform json decoding'
+        print ''
+        sys.exit()
 
 setup(name         = 'Embedly',
       description  = 'A simple OEMBED library to use with api.embed.ly',

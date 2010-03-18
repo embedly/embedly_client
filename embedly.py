@@ -1,10 +1,17 @@
 # Built in library imports
 import re
-
-# Server imports
 import urllib
 import urllib2
-import json
+
+# JSON decoder
+try:
+    import json
+except ImportError:
+    try:
+        import simplejson as json
+    except ImportError:
+        raise ImportError("Need a json decoder")
+
 
 # Embed.ly Multi Provider API Endpoint
 OEMBED_API_ENDPOINT = 'http://api.embed.ly/v1/api/oembed'
