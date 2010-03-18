@@ -1,6 +1,0 @@
-import embedly
-
-# print out response
-import pprint
-pprint.pprint(embedly.get_oembed('http://www.flickr.com/photos/ende/7521239/'))
-
